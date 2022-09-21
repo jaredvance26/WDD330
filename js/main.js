@@ -2,9 +2,13 @@
 
 const links = [
 	{
-		label: 'Week 1 Notes',
+		label: 'Week 1 code exercise',
 		url: 'week01/'
 	},
+	{
+		label: 'Week 2 code exercise',
+		url: 'week02/'
+	}
 ];
 
 const listOfLinks = document.querySelector('ol');
