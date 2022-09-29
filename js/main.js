@@ -8,6 +8,10 @@ const links = [
 	{
 		label: 'Week 2 code exercise',
 		url: 'week02/'
+	},
+	{
+		label: 'Week 3 code exercise',
+		url: 'week03/'
 	}
 ];
 

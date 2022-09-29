@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 3</title>
+  </head>
+  <style>
+    html {
+      background-color: white;
+    }
+    h1 {
+      text-align: center;
+    }
+    body {
+      max-width: 800px;
+      margin: 0 auto 0 auto;
+      margin-top: 50px;
+      background-color: lightgray;
+      padding: 15px;
+    }
+    img {
+      display: block;
+      max-width: 50%;
+      margin: 0 auto 0 auto;
+    }
+	button {
+		display: block;
+		padding: 15px;
+		background-color: navy;
+		color: white;
+		max-width: 100px;
+		margin: 0 auto 0 auto;
+	}
+  </style>
+  <script>
+	  const handleClick = () => {
+		  alert('An event just occurred!');
+	  }
+  </script>
+  <body>
+    <h1>Week 3 Notes</h1>
+    <section>
+      <h2>Objects</h2>
+      <p>
+        Objects are entities that are commonly used. A common example of an
+        object is a car. The make, model, and year are all related properties of
+        the car. An object would look like this:
+      </p>
+      <img src="images/object.png" alt="object example" />
+    </section>
+    <section>
+      <h2>Document Object Model</h2>
+      <p>
+        Document Object Models, aka DOM are commonly used to manipulate HTML
+        elements. Here are some pretty common and self-explanatory DOM
+        functions:
+      </p>
+      <code>document.querySelector()</code><br />
+      <code>document.getElementById()</code><br />
+      <code>document.createElement()</code><br />
+    </section>
+    <section>
+      <h2>Events</h2>
+      <p>
+        Events are used on pretty much every website you will see. A very common
+        event is a click. An example I created is when you click the button
+        below, an alert will appear on this screen.
+      </p>
+	  <button onclick="handleClick()">Click Me</button>
+    </section>
+  </body>
+</html>
+
