@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 04 Notes</title>
+  </head>
+  <style>
+    html {
+      background-color: white;
+    }
+    body {
+      background-color: lightgray;
+      max-width: 600px;
+      margin: 50px auto 0 auto;
+      padding: 15px;
+    }
+    form {
+      background-color: rgb(174, 171, 171);
+      max-width: 300px;
+      margin: 0 auto 0 auto;
+      padding: 5px;
+      text-align: center;
+    }
+    h1 {
+      text-align: center;
+    }
+
+    img {
+      max-width: 600px;
+    }
+  </style>
+  <body>
+    <h1>Week 04 Notes</h1>
+    <main>
+      <section>
+        <h2>Forms</h2>
+        <p>
+          Forms are an excellent way to collect data from users. It is often
+          used for sign ups, or sending messages in a website. To start a form,
+          you simply use a form tag. Inside the form tag, you can put inputs,
+          radio groups, and anything else you need from the user.
+        </p>
+        <p>Example form:</p>
+        <form>
+          <label for="fname">First Name:</label><br />
+          <input type="text" id="fname" /><br />
+          <label for="lname">Last Name:</label><br />
+          <input type="text" id="lname" /><br />
+          <label for="email">Email:</label><br />
+          <input type="text" id="email" /><br />
+        </form>
+      </section>
+      <section>
+        <h2>Object Oriented Programming</h2>
+        <p>
+          Object Oriented Programming (OOP) is a common way for organizing code.
+          It is like having template objects. For example, if you want to create
+          an object for a person, like your friend.
+        </p>
+
+        <p>
+          The properties of the attribute would include their first name, last
+          name, phone number, and a picture. So you create one for your friend
+          Johnny. But now your friend Timmy wants one, so you create a whole new
+          object for him. Then another friend, then another, etc.
+        </p>
+
+        <p>
+          Instead of creating an object for each friend, that is where OOP comes
+          in. You create a general class called something broad like Person.
+          This class has the same properties as Johnny but now Timmy and your
+          other friends can take from the same class.
+        </p>
+        <p>Here is an example:</p>
+
+        <img src="images/oop.png" alt="oop" />
+      </section>
+      <section>
+        <h2>Modular JS</h2>
+		<p>Using Modules for JS is a great way to keep code bases tidy and clean.
+			With code bases thousands to millions lines of code, having modules is
+			very important. Having modules also allows you code to be more testable.
+			If you have a complex function, it is better to put it in its own file, with
+			a test file nearby.
+		</p>
+      </section>
+    </main>
+  </body>
+</html>
