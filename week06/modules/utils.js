@@ -1,8 +1,8 @@
-import { updateData } from "./ls.js"
+import { updateData } from "./main.js"
 
 export const tasksLeft = (tasks) => {
   return tasks.reduce((acc, task) => {
-    if (!task.completed || !task.deleteTask) {
+    if (task.completed === false) {
       acc++;
     }
     return acc;
@@ -27,7 +27,7 @@ const remove = (tasks, container) => {
   document.querySelector("span.tasks-left").textContent = tasksLeft(tasks);
 };
 
-export const outputData = (tasks, container) => {
+export const outputData = (tasks=[], container) => {
   container.textContent = "";
 
   tasks.forEach((task) => {
@@ -48,6 +48,7 @@ export const outputData = (tasks, container) => {
       task.completed = !task.completed;
       isTaskCompleted(task, checkbox, taskContent);
       updateData(tasks);
+	  document.querySelector("span.tasks-left").textContent = tasksLeft(tasks);
     };
 
     const deleteTask = document.createElement("span");
