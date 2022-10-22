@@ -1,0 +1,92 @@
+* {
+	font-family: Tahoma,sans-serif;
+	font-weight: 100;
+}
+
+body {
+	margin: 2em auto 0 auto;
+	max-width: 40%;
+}
+
+main {
+	background-color: rgb(241, 241, 241);
+	padding: 1em;
+}
+
+h1 {
+	text-align: center;
+	font-size: 3em;
+}
+
+/* ---------------- TASKS  ----------------*/
+div.task {
+display: flex;
+align-items: center;
+background-color: white;
+justify-content: space-between;
+border-top: 1px solid black;
+border-left: 1px solid black;
+border-right: 1px solid black;
+}
+
+div.tasks div:nth-last-child(-n+1) {
+	border-bottom: 1px solid black;
+}
+
+
+div.flexCheckBox {
+	display: flex;
+	align-items: center;
+}
+
+
+span.delete {
+	color: rgb(195, 3, 3);
+	margin-right: 5px;
+}
+
+span.checkbox {
+	font-size: 30px;
+}
+
+p.completedTask {
+	text-decoration: line-through;
+}
+
+p.selectedFilter {
+	border: 2px solid black;
+}
+/* ---------------- TASK BAR  ----------------*/
+
+div.task-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+div.task-bar div.filters {
+	display: flex;
+}
+
+div.task-bar div.filters p {
+	margin: 0 10px 0 10px;
+	padding: 5px;
+}
+
+/* ---------------- ADD TASK ----------------*/
+
+footer {
+	display: flex;
+	margin-top: 2em;
+	height: 2em;
+	gap: 5px;
+}
+input {
+	width: 90%;
+}
+
+button {
+	width: 10%;
+	font-size: 1.25em;
+}
+
