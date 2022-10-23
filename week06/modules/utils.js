@@ -1,8 +1,9 @@
-import { updateData } from "./main.js"
+import { updateData } from "./main.js";
 
-export const tasksLeft = (tasks) => {
-  return tasks.reduce((acc, task) => {
-    if (task.completed === false) {
+export const tasksLeft = () => {
+  const allTasks = JSON.parse(localStorage.getItem("tasks"));
+  return allTasks.reduce((acc, task) => {
+    if (task.completed === false && task.deleted === false) {
       acc++;
     }
     return acc;
@@ -18,16 +19,30 @@ const isTaskCompleted = (task, checkbox, taskContent) => {
 };
 
 const remove = (tasks, container) => {
-  tasks = tasks.filter((task) => {
-    return task.deleted !== true;
+  const allTasks = JSON.parse(localStorage.getItem("tasks"));
+
+  const tasksToDisplay = tasks.filter((task) => {
+    return !task.deleted;
   });
 
-  outputData(tasks, container);
-  updateData(tasks);
-  document.querySelector("span.tasks-left").textContent = tasksLeft(tasks);
+  const deletedTasks = tasks
+    .filter((task) => {
+      return task.deleted === true;
+    })
+    .map((task) => task.id);
+
+  const tasksToDelete = new Set(deletedTasks);
+
+  const updatedTasks = allTasks.filter((task) => {
+    return !tasksToDelete.has(task.id);
+  });
+
+  outputData(tasksToDisplay, container);
+  updateData(updatedTasks);
+  document.querySelector("span.tasks-left").textContent = tasksLeft();
 };
 
-export const outputData = (tasks=[], container) => {
+export const outputData = (tasks, container) => {
   container.textContent = "";
 
   tasks.forEach((task) => {
@@ -48,7 +63,7 @@ export const outputData = (tasks=[], container) => {
       task.completed = !task.completed;
       isTaskCompleted(task, checkbox, taskContent);
       updateData(tasks);
-	  document.querySelector("span.tasks-left").textContent = tasksLeft(tasks);
+      document.querySelector("span.tasks-left").textContent = tasksLeft();
     };
 
     const deleteTask = document.createElement("span");
