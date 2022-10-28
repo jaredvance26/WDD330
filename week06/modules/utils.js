@@ -27,9 +27,8 @@ const remove = (tasks, container) => {
 
   const deletedTasks = tasks
     .filter((task) => {
-      return task.deleted === true;
-    })
-    .map((task) => task.id);
+      return task.deleted;
+    }).map((task) => task.id);
 
   const tasksToDelete = new Set(deletedTasks);
 
