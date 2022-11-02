@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Week 8</title>
+</head>
+<style>
+	h1 {
+		text-align: center;
+		margin-top: 2em;
+	}
+
+	img {
+		display: block;
+		width: 500px;
+		margin: 0 auto 0 auto;
+	}
+
+	h2 {
+		text-align: center;
+		font-size: 2em;
+		/* transform: skew(15deg, 4deg); */
+	}
+
+	span {
+		/* transition-property: transform, color, border, background-color;
+		transition-duration: 2000ms;
+		transition-timing-function: ease;
+		transition-delay: -500ms; */
+
+		transition: all 2000ms ease 50ms;
+		border: 1px solid black;
+	}
+
+	h2:hover span {
+		display: inline-block;
+		color: darkgreen;
+		font-size: 50px;
+		transform: rotate(370deg) translateX(100px) scale(1.5);
+		border-width: 5px;
+		background-color: lightgray;
+	}
+
+	@keyframes moveRight {
+		from {
+			transform: translateX(-50%);
+		}
+
+		to {
+			transform: translateX(50%);
+		}
+
+	}
+</style>
+
+<body>
+	<h1>Transforms & Transitions</h1>
+	<img src="images/dukes.png" alt="fight">
+	<h2>PUT<br> YOUR <br><span>DUKES</span> <br>UP SIRE</h2>
+	<h1>Canvas, SVG, Drag & Drop</h1>
+	<canva width='500px' height="500px">Sorry, your browser does not support canvas</canvas>
+</body>
+
+</html>
