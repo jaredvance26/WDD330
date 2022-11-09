@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Week 09</title>
+</head>
+<style>
+	html {
+		background-color: white;
+	}
+	body {
+		max-width: 800px;
+		margin: 1em auto;
+		background-color: lightgray;
+		padding: 10px;
+		border-radius: 15px;
+	}
+	body h1 {
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	button {
+		padding: 20px;
+		font-size: 15px;
+		background-color: rgb(22, 22, 122);
+		color: white;
+		border: none;
+		border-radius: 15px;
+		transition: all 500ms;
+	}
+
+	button:hover {
+		background-color: white;
+		color: rgb(22, 22, 122);
+	}
+
+	div.flex {
+		display: flex;
+		justify-content: space-around;
+	}
+
+</style>
+<body>
+	<h1>Week 09 Notes</h1>
+	<section class="window">
+		<h2>Window Object</h2>
+		<p>The window object is global object in a browser environment. So in a browser environment, this is console.log() would return 10:</p>
+		<code>x = 10</code><br>
+		<code>console.log(window.x)</code>
+		<p>There are three main functions of a window: alert(), confirm(), and prompt(). These functions are all pretty self-explanatory, so I will demonstrate them all. </p>
+		<div class="flex">
+			<button class="alert">Alert</button>
+			<button class="confirm">Confirm</button>
+			<button class="prompt">Prompt</button>
+		</div>
+		<p>You name that we got from the prompt will be displayed here: <strong><span class='name'></span></strong></p>
+	</section>
+	<section>
+		<h2>APIs</h2>
+		<p>APIs are a great tool for web applications. We worked a lot with a API last week when we got JSON data from the Star Wars API. There is a lot that can be done with APIs, and some are built in like Web Storage.</p>
+	</section>
+
+	<script>
+
+		const alert = document.querySelector('button.alert');
+		const confirm = document.querySelector('button.confirm');
+		const prompt = document.querySelector('button.prompt');
+
+		alert.onclick = () => {window.alert('This is an alert')};
+		confirm.onclick = () => {window.confirm('You are being asked to confirm')};
+		prompt.onclick = () => {
+			const name = window.prompt('What is your name?')
+			
+			const span = document.querySelector('span.name');
+			span.textContent = name;
+
+		}
+
+	</script>
+</body>
+</html>
