@@ -9,7 +9,7 @@ export const getWeatherData = (
   hourlyWeather,
   dailyForecast
 ) => {
-  const area_api_url = `http://api.openweathermap.org/geo/1.0/zip?zip=${zip}&appid=${api_key}`;
+  const area_api_url = `https://api.openweathermap.org/geo/1.0/zip?zip=${zip}&appid=${api_key}`;
   fetch(area_api_url)
     .then((response) => response.json())
     .then((area) => {
