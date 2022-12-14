@@ -51,7 +51,7 @@ export const createShortcuts = (favorites) => {
 
 export const isAlreadyFavorite = (favorites, zip) => {
   favorites.forEach((favorite) => {
-    if (favorite === zip) {
+    if (favorite.slice(0, 5) === zip) {
       document
         .querySelector("span.material-symbols-outlined")
         .classList.add("liked");

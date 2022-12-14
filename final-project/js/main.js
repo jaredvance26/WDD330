@@ -60,6 +60,9 @@ likeButton.onclick = () => {
   const zip = document.querySelector("input").value;
   favorites = addFavorite(likeButton, zip, favorites);
   localStorage.setItem("favorites", JSON.stringify(favorites));
+  if (likeButton.classList.contains("liked")) {
+    location.reload();
+  }
 };
 
 if (favorites.length) {
@@ -70,15 +73,21 @@ if (favorites.length) {
         button.parentElement.textContent.slice(0, 5)
       );
       localStorage.setItem("favorites", JSON.stringify(favorites));
+
       location.reload();
     };
   });
 
   document.querySelectorAll("span.saved-zip").forEach((zip) => {
     zip.onclick = () => {
-      document.querySelector("input").value = zip.textContent;
+      document.querySelector("input").value = zip.textContent.slice(0, 5);
       getWeather();
-      getWeatherData(zip.textContent, isCelsius, hourlyWeather, dailyForecast);
+      getWeatherData(
+        zip.textContent.slice(0, 5),
+        isCelsius,
+        hourlyWeather,
+        dailyForecast
+      );
       container.style.display = "block";
     };
   });

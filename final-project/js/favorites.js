@@ -2,10 +2,10 @@ export const addFavorite = (button, zip, favorites) => {
   button.classList.toggle("liked");
 
   if (button.classList.contains("liked")) {
-    favorites.push(zip);
+    favorites.push(`${zip} - ${document.querySelector("h2.city").textContent}`);
   } else {
     favorites = favorites.filter((favorite) => {
-      return favorite !== zip.toString();
+      return favorite.slice(0, 5) !== zip.toString();
     });
   }
   return favorites;
@@ -13,6 +13,6 @@ export const addFavorite = (button, zip, favorites) => {
 
 export const removeFavorite = (favorites, favorite) => {
   return favorites.filter((fav) => {
-    return fav !== favorite;
+    return fav.slice(0, 5) !== favorite;
   });
 };
