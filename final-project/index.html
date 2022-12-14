@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weather</title>
+
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- Google Font Links -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+
+	<!-- Google Icons -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+
+</head>
+
+<body>
+	<div class="favorites"></div>
+	<div class="module">
+		<h1>Weather</h1>
+		<label for="zip">Enter Zip code: </label>
+		<input name="zip">
+		<button class="get-weather">Get Weather</button>
+	</div>
+	<div class="weather-data">
+		<div class="module current-weather">
+			<h2 class="city">--</h2>
+			<span class="material-symbols-outlined">
+				favorite
+				</span>
+			<p class="desc">--</p>
+			<h3><span class="current-temp">--</span><span class="unit">&deg;F</span></h3>
+			<button class="celsius-conversion">Convert to Celsius</button>
+			<div class="hourly-weather">
+			</div>
+		</div>
+		<div class="flex">
+			<div class="module current-info">
+				<h2>Today</h2>
+				<ul>
+					<li>UV Index: <span class="uv"></span></li>
+					<li>Humidity: <span class="humidity"></span>%</li>
+					<li>Feels Like: <span class="feels"></span><span class="unit">&deg;F</span></li>
+					<li>Sunrise: <span class="sunrise"></span></li>
+					<li>Sunset: <span class="sunset"></span></li>
+					<li>Gusts: <span class="gusts"></span></li>
+
+				</ul>
+			</div>
+			<div class="module">
+				<h2>7-Day Forecast (High/Low)</h2>
+				<ul class="daily-forecast"></ul>
+			</div>
+		</div>
+	</div>
+	<script src="js/main.js" type="module"></script>
+</body>
+
+</html>
