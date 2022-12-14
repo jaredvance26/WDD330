@@ -7,7 +7,6 @@ export const addFavorite = (button, zip, favorites) => {
     favorites = favorites.filter((favorite) => {
       return favorite !== zip.toString();
     });
-    console.log(favorites);
   }
   return favorites;
 };

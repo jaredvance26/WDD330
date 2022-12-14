@@ -38,9 +38,10 @@ getWeatherButton.onclick = () => {
   getWeather();
 
   const zip = document.querySelector("input").value;
-
-  getWeatherData(zip, isCelsius, hourlyWeather, dailyForecast);
-  container.style.display = "block";
+  if (zip) {
+    getWeatherData(zip, isCelsius, hourlyWeather, dailyForecast);
+    container.style.display = "block";
+  }
 };
 
 celsiusConversionButton.onclick = () => {
@@ -49,7 +50,6 @@ celsiusConversionButton.onclick = () => {
   changeConversionButtonText(celsiusConversionButton, isCelsius);
 
   const zip = document.querySelector("input").value;
-
   getWeather(isCelsius);
   convertUnitsSign(isCelsius);
   getWeatherData(zip, isCelsius, hourlyWeather, dailyForecast);
@@ -60,19 +60,17 @@ likeButton.onclick = () => {
   const zip = document.querySelector("input").value;
   favorites = addFavorite(likeButton, zip, favorites);
   localStorage.setItem("favorites", JSON.stringify(favorites));
-  location.reload();
 };
 
 if (favorites.length) {
   document.querySelectorAll("span.x").forEach((button) => {
     button.onclick = () => {
-      const zip = document.querySelector("input").value;
-
       favorites = removeFavorite(
         favorites,
         button.parentElement.textContent.slice(0, 5)
       );
       localStorage.setItem("favorites", JSON.stringify(favorites));
+      location.reload();
     };
   });
 
